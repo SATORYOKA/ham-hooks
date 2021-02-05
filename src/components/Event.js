@@ -2,12 +2,15 @@ import React from "react"
 //import dispatch from "reduces"
 //import reducer from "../reducers/"
 
+import { DELETE_EVENT } from "../actions"
+
 function Event({ dispatch, event }) {
   const id = event.id
   const handleClickDeleteButton = () => {
     const result = window.confirm("Really???")
+
     if (result) {
-      dispatch({ type: "DELETE_EVENT", id })
+      dispatch({ type: DELETE_EVENT, id })
     }
   }
   return (
